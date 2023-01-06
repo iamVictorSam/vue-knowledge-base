@@ -15,18 +15,21 @@ export default {
   mounted() {
     const butter = Butter(import.meta.env.VITE_BUTTER_API_KEY);
 
+    // butter.page
+    //   .retrieve("*", "home")
+    //   .then((resp) => {
+    //     ({
+    //       image: this.image,
+    //       title: this.title,
+    //       description: this.description,
+    //     } = resp.data.data.fields.header_component);
+    //   })
+    //   .catch(function (resp) {
+    //     console.log(resp);
+    //   });
     butter.page
-      .retrieve("*", "home")
-      .then((resp) => {
-        ({
-          image: this.image,
-          title: this.title,
-          description: this.description,
-        } = resp.data.data.fields.header_component);
-      })
-      .catch(function (resp) {
-        console.log(resp);
-      });
+      .retrieve("*", "how-to")
+      .then((response) => console.log(response));
   },
 };
 </script>
